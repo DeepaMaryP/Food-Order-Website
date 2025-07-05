@@ -19,7 +19,7 @@ function DynamicDropdown(props) {
 
     return (
         <div>
-            <select onChange={handleChange} value={selectedValue} className='border border-orange-500 w-72'>
+            <select onChange={handleChange} value={selectedValue} className='border w-72'>
                 <option value=""> {optionCategory}</option>
                 {options.map(option =>
                     <option key={option.value} value={option.value}>{option.label}</option>

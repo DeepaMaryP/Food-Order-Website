@@ -18,6 +18,7 @@ import SellerHighlights from './components/SellerHighlights.jsx'
 import AboutUs from './pages/AboutUs.jsx'
 import ContactUs from './pages/ContactUs.jsx'
 import TermsAndConditions from './pages/TermsAndConditions.jsx'
+import UserListPage from './pages/user/UserListPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
     {
       path: "/home",
       element: <Home />
+    },
+    {
+      path: "/login",
+      element: <Login />
     },
     {
       path: "/seller/",
@@ -72,6 +77,9 @@ const router = createBrowserRouter([
     {
       path: "/admin/adddish/:dishId",
       element: <AddDishPage />
+    },{
+      path: "/users",
+      element: <UserListPage />
     }
     ]
   }

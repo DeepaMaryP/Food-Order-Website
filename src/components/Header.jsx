@@ -7,10 +7,9 @@ import searchLogo from '../assets/search.png'
 import cartLogo from '../assets/cart.png'
 import userLogo from '../assets/userLogo.png'
 
-import { login } from '../redux/slice/userSlice'
-
 function Header() {
   const orderCount = useSelector(state => state.order.orderCount)
+  const user = useSelector(state => state.user);
 
   return (
     <div>
@@ -18,18 +17,28 @@ function Header() {
         <div className='w-1/4'>
           <img src={logo} className='h-20' alt="logo" />
         </div>
-        <div className='flex w-1/2 gap-1 sm:gap-x-9 text-orange-500 text-xl font-bold items-center'>
-          <Link to='/'>
-            <span>Home</span></Link>
-          <Link to='/seller' >
-            <span>Dishes</span> </Link>
-          <Link to='/orders'>
-            <span>Orders</span></Link>
-             <Link to='/about'>
-            <span>About Us</span></Link>
+        {!user.isLoggedIn &&
+          <div className='flex w-1/2 gap-1 sm:gap-x-9 text-orange-500 text-lg font-bold items-center'>
+            <Link to='/'>
+              <span>Home</span></Link>
+            <Link to='/seller' >
+              <span>Dishes</span> </Link>
+            <Link to='/orders'>
+              <span>Orders</span></Link>
+            <Link to='/about'>
+              <span>About Us</span></Link>
             <Link to='/contact'>
-            <span>Contact Us</span></Link>
-        </div>
+              <span>Contact Us</span></Link>
+          </div>}
+
+        {user.isLoggedIn &&
+         <div className='flex w-1/2 gap-1 sm:gap-x-9 text-orange-500 text-lg font-bold items-center'>
+            <Link to='/admin/dishes'>
+              <span>Manage Dish</span></Link>
+            <Link to='/users' >
+              <span>Manage Users</span> </Link>           
+          </div>
+        }
         <div className='w-1/4 flex gap-3 items-center justify-center'>
           {/* <img src={searchLogo} className='h-10' alt="Search" /> */}
           <div className="relative w-10 h-10">
@@ -49,7 +58,17 @@ function Header() {
               )}
             </Link>
           </div>
-          <img src={userLogo} className='h-9' alt="Login" />
+          <Link to='/login' >
+            <div className='flex items-center gap-2'>
+              <img src={userLogo} className='h-9' alt="Login" />
+              {!user.isLoggedIn &&
+                <span className='font-bold text-lg'>Sign In</span>
+              }
+              {user.isLoggedIn &&
+                <span className='font-medium text-md'>{user.name}</span>
+              }
+            </div>
+          </Link>
         </div>
       </div>
     </div>

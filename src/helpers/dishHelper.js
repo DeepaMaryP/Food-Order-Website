@@ -53,8 +53,8 @@ export function getDish() {
         seller: "",
         rating: "",
         photo: null,
-        price: 0,
-        discount: 0,
+        price: "",
+        discount: "",
         createdAt: ""
     }
     return dish;
@@ -130,6 +130,7 @@ export function deleteDish(dishId) {
     const storedDishes = getDishList();
     const newDishes = storedDishes.filter(item => item.id !== dishId);
     storeToLocal("dishList", JSON.stringify(newDishes))
+    return newDishes;
 }
 
 export const storeDefaultDish = () => {

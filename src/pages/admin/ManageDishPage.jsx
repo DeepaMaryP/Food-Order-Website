@@ -1,19 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { getDishList } from '../../helpers/dishHelper'
+import { deleteDish, getDishList } from '../../helpers/dishHelper'
 
 function ManageDishPage() {
-    const dishesList = getDishList();
 
-    const deleteDish = (id) => {
-      //  console.log(id);
-        deleteDish(id);
+    const [dishList, setDishList] = useState(getDishList());
+
+    const doDeleteDish = (id) => {
+        if (window.confirm("Are you sure you want to delete this item?")) {
+            const newDishList = deleteDish(id);
+            setDishList(newDishList);
+            console.log("Item deleted.");
+        } else {
+            // User cancelled
+            console.log("Deletion cancelled.");
+        }
     }
 
     return (
         <div>
-            <div className="flex justify-end px-4 py-5 text-sm text-gray-700 border-b border-gray-200 gap-x-16 dark:border-gray-700">
+            <div className="flex justify-around items-center px-4 py-5 text-sm text-gray-700 border-b border-gray-200 gap-x-16 dark:border-gray-700">
+                <h1 className='text-xl font-bold'>Manage Dishes</h1>
+                <h6 className='text-red-500'>NB-Three dishes are added to local storage on admin login for display purpose</h6>
                 <div>
                     <Link to={`/admin/adddish`}>
                         <button className="text-white block bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:focus:ring-blue-900">Add New</button>
@@ -44,7 +53,7 @@ function ManageDishPage() {
                     </thead>
                     <tbody>
                         {
-                            dishesList.map(dish =>
+                            dishList.map(dish =>
                                 <tr key={dish.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <th scope="row" className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         <img className="w-10 h-10 rounded-full" src={dish.photo} alt="Dish image" />
@@ -65,7 +74,7 @@ function ManageDishPage() {
                                         <Link to={`/admin/adddish/${dish.id}`}>
                                             <button className="bg-blue-500 text-white px-3 py-1 rounded-md text-xs md:text-sm">Edit</button>
                                         </Link>
-                                        <button className="bg-red-500 text-white px-3 py-1 rounded-md text-xs md:text-sm" onClick={() => deleteDish(dish.id)}>Delete</button>
+                                        <button className="bg-red-500 text-white px-3 py-1 rounded-md text-xs md:text-sm" onClick={() => doDeleteDish(dish.id)}>Delete</button>
                                     </td>
                                 </tr>
 

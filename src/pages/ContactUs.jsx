@@ -1,3 +1,4 @@
+import React from 'react'
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 
 export default function ContactUs() {
@@ -19,7 +20,7 @@ export default function ContactUs() {
                                 name="first-name"
                                 type="text"
                                 autoComplete="given-name"
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="border block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                             />
                         </div>
                     </div>
@@ -33,7 +34,7 @@ export default function ContactUs() {
                                 name="last-name"
                                 type="text"
                                 autoComplete="family-name"
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="border block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                             />
                         </div>
                     </div>
@@ -47,7 +48,7 @@ export default function ContactUs() {
                                 name="company"
                                 type="text"
                                 autoComplete="organization"
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="border block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                             />
                         </div>
                     </div>
@@ -61,7 +62,7 @@ export default function ContactUs() {
                                 name="email"
                                 type="email"
                                 autoComplete="email"
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="border block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                             />
                         </div>
                     </div>
@@ -93,7 +94,7 @@ export default function ContactUs() {
                                     name="phone-number"
                                     type="text"
                                     placeholder="123-456-7890"
-                                    className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                                    className="border block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                                 />
                             </div>
                         </div>
@@ -107,7 +108,7 @@ export default function ContactUs() {
                                 id="message"
                                 name="message"
                                 rows={4}
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="border block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                                 defaultValue={''}
                             />
                         </div>
