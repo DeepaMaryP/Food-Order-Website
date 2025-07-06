@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
 
 import './index.css'
-import LayOutPage from './pages/LayOutPage.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
 import Home from './pages/Home.jsx'
 import AddDishPage from './pages/admin/AddDishPage.jsx'
@@ -19,11 +18,12 @@ import AboutUs from './pages/AboutUs.jsx'
 import ContactUs from './pages/ContactUs.jsx'
 import TermsAndConditions from './pages/TermsAndConditions.jsx'
 import UserListPage from './pages/user/UserListPage.jsx'
+import LayoutPage from './pages/LayoutPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LayOutPage />,
+    element: <LayoutPage />,
     errorElement: <ErrorPage />,
 
     children: [{

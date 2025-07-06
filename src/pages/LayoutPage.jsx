@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../components/Header'
 
-function LayOutPage() {
+function LayoutPage() {
   return (
     <div>
       <Header/>
@@ -13,4 +13,4 @@ function LayOutPage() {
   )
 }
 
-export default LayOutPage
+export default LayoutPage
