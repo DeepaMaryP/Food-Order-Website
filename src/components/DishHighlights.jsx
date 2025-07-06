@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const itemsPerSlide = 3;
+const itemsPerSlide = 4;
 const dishesList = [
     {
         id: "1",
@@ -66,9 +66,9 @@ export default function DishHighlights() {
 
     return (
         <div className="relative w-full max-w-7xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 {getVisibleSlides().map(dish =>
-                    <div key={dish.id} className="h-64 rounded-lg shadow-lg">
+                    <div key={dish.id} className="h-96 md:h-64 rounded-lg shadow-lg">
                         <Link to={`/seller/${dish.category}`}>
                             <img
                                 src={dish.photo}

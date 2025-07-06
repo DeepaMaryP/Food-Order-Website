@@ -68,12 +68,12 @@ function SellerDisplay(props) {
         <div>
             <div id="sellerList">
                 <div>
-                    <div className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  align-middle justify-center my-8 p-1 ">
-                        <div className="w-full md:w-1/2 mx-auto md:p-0">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 align-middle justify-items-center sm:my-5">
+                        <div className="sm:mx-auto ">
                             <DynamicDropdown item={sellerCategory} onData={searchProductsBySeller} name='Select Seller' />
                         </div>
 
-                        <div className="w-full md:w-1/2 mx-auto md:p-0 p-2">
+                        <div className="sm:mx-auto py-5 sm:py-0">
                             <DynamicDropdown item={sortByList} onData={sortProductList} name='Sort By' />
                         </div>
                     </div>

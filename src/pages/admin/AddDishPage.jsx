@@ -109,8 +109,8 @@ function AddDishPage() {
 
   return (
     <div className='m-10'>
-      <div className='flex justify-around mb-5 items-center'>
-        <h1 className='text-xl font-bold'>Add dishes to display at Home page based on Category and Seller</h1>
+      <div className='flex flex-col sm:flex-row justify-center sm:justify-around mb-5 items-center'>
+        <h1 className='text-xl font-bold m-2 sm:m-0 '>Add dishes to display at Home page based on Category and Seller</h1>
         <Link to='/admin/dishes' >
           <span className='text-orange-400 font-bold'>Back to Manage Dish</span></Link>
       </div>

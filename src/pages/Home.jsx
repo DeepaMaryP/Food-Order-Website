@@ -11,7 +11,7 @@ function Home() {
     <div>
       <Banner />
       <DishHighlights />  
-      <div className='my-28'>
+      <div className='my-12 lg:my-16'>
          <SellerHighlights />
       </div>           
       <Footer />

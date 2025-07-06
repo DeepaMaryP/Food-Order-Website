@@ -12,18 +12,18 @@ function SellerHighlights({ sellers, dishCategory = '' }) {
   return (
     <div>
       {dishCategory.length == 0 &&
-        <p className='text-3xl font-bold text-center'>Restaurants with online food delivery</p>
+        <p className='text-2xl sm:text-3xl font-bold text-center pt-5'>Restaurants with online food delivery</p>
       }
 
       {dishCategory.length > 0 &&
-        <div className='flex w-3/4 justify-around items-center'>
-          <p className='text-3xl font-bold'>Choose the Perfect {dishCategory}</p>
+        <div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center sm:justify-around items-center'>
+          <p className='text-xl md:text-3xl mb-3 sm:mb-0 font-bold'>Choose the Perfect {dishCategory}</p>
           <Link to='/seller/'> <span className='text-orange-400 font-bold'> Back to Main Menu </span>
           </Link>
         </div>
       }
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center md:justify-between mx-6 p-2 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center m-6 p-2">
         {sellerList.map((item) => (
           <SellerCard key={item.seller.id} item={item} />
         ))}

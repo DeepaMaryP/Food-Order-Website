@@ -6,10 +6,10 @@ function SellerCard(props) {
     const seller = props.item.seller;
 
     return (
-        <div className="p-2">
+        <div className="p-4">
             {<div className="relative max-w-sm rounded overflow-hidden shadow-lg">
                 <Link to={`/product/${seller.name}`}>
-                    <img className="w-full h-60" src={dish.photo} alt="Sunset in the mountains" />
+                    <img className="w-72 h-60" src={dish.photo} alt="Sunset in the mountains" />
                     <div className='absolute bottom-2/3 left-0 right-0 bg-black bg-opacity-50 '>
                         <h4 className='text-white text-xl font-bold  px-4 text-center'>ITEMS AT ₹{dish.price}</h4>
                     </div>

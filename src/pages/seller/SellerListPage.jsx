@@ -12,7 +12,7 @@ function SellerListPage() {
     <div className='mt-5'>
       {!sellers &&
         <div className='mt-10 text-center text-lg font-bold'>
-          <p>Uh-oh! No Outlets is accepting orders at the moment. They should be back soon</p>
+          <p className='p-3'>Uh-oh! No Outlets is accepting orders at the moment. They should be back soon</p>
         </div>}
 
       {sellers && (

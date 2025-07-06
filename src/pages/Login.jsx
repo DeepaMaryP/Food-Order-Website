@@ -58,7 +58,7 @@ export default function Login() {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={onSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
+            <label htmlFor="email" className="block pl-2 text-sm/6 font-medium text-gray-900">
               Email address
             </label>
             <div className="mt-2">
@@ -77,13 +77,13 @@ export default function Login() {
           </div>
 
           <div>
-            <div className="flex items-center justify-between">
-              <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+              <label htmlFor="password" className="pl-2 block text-sm/6 font-medium text-gray-900">
                 Password
               </label>
               {!user.isLoggedIn &&
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a href="#" className="pl-2 font-semibold text-indigo-600 hover:text-indigo-500">
                     Forgot password?
                   </a>
                 </div>}

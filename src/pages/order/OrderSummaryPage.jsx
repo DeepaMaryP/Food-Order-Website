@@ -33,7 +33,7 @@ export default function OrderSummaryPage() {
       <div>
         <div className='flex justify-center'>
           <div className='flex flex-col justify-center m-5'>
-            <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-32 md:rounded-none md:rounded-s-lg" src={defaultDish.photo} alt="" />
+            <img className="object-cover rounded-t-lg h-auto w-32 md:rounded-none md:rounded-s-lg" src={defaultDish.photo} alt="" />
           </div>
 
           <div class="flex flex-col mt-2 justify-center">
@@ -43,7 +43,7 @@ export default function OrderSummaryPage() {
         </div>
 
         <div className='mt-8'>
-          <div className="flex mx-auto md:flex-col md:max-w-3xl bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <div className="flex mx-3 lg:mx-auto lg:flex-col lg:max-w-3xl bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             {uniqueDishes.map(dish =>
               <div key={dish.id} className="flex w-full justify-between mb-5 items-center">
                 <h6 className="text-lg font-bold">{dish.name} * {dish.count}</h6>
@@ -53,7 +53,7 @@ export default function OrderSummaryPage() {
           </div>
         </div>
 
-        <div className="flex mx-auto md:flex-col md:max-w-3xl bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <div className="flex mx-3 lg:mx-auto lg:flex-col lg:max-w-3xl bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
           <div className="flex w-full justify-between mb-5 items-center">
             <h6 className="text-lg font-bold">Sub Total :</h6>
             <h6 className="text-lg font-bold">₹{totalCartPrice}</h6>
