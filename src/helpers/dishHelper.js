@@ -64,7 +64,9 @@ export function getDishList() {
     let dishList = [];
     const storedDishes = localStorage.getItem("dishList");
     if (storedDishes) {
-        dishList = JSON.parse(storedDishes)
+        console.log(storedDishes);
+      
+       // dishList = JSON.parse(storedDishes)
     }
     return JSON.parse(dishList);
 }
