@@ -15,7 +15,7 @@ function Header() {
     <div>
       <div className='p-0 m-0 box-border grid grid-cols-3 sm:grid-cols-4  xl:grid-cols-5'>
         <div className='col-span-2 xl:col-span-1'>
-          <img src={logo} className='h-20' alt="logo" />
+          <img src={logo} className='h-20' alt="logo" /> 
         </div>
         {!user.isLoggedIn &&
           <div className='col-span-3 grid grid-cols-5 lg:grid-cols-7 mt-3 pl-2 text-orange-500 text-medium xl:text-xl font-bold items-center'>
@@ -43,7 +43,7 @@ function Header() {
           {/* <img src={searchLogo} className='h-10' alt="Search" /> */}
           <div className="relative w-10 ">
             <Link to='/orders'>
-              <img src={cartLogo} className='h-5 sm:h-8' alt="Cart" />
+               <img src={cartLogo} className='h-5 sm:h-8' alt="Cart" /> 
               {orderCount > 0 && (
                 <span
                   className="absolute -top-1 -right-1  bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">

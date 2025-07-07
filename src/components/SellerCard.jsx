@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import starImg from "../assets/star.png"
 
 function SellerCard(props) {
     const dish = props.item.dish;
@@ -19,7 +20,7 @@ function SellerCard(props) {
                     <div className="items-baseline text-gray-900 dark:text-black">
                         <div className="flex items-center justify-between">
                             <div className='flex items-center'>
-                                <img src="src/assets/star.png" className='h-6' alt="" />
+                                <img src={starImg} className='h-6' alt="" />
                                 <span className="ml-1 text-lg text-gray-900 dark:text-white"> {seller.rating}</span>
                             </div>
                         </div>

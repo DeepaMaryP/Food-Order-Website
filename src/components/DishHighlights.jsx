@@ -1,47 +1,56 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import biriyaniImg from "../assets/food/Biriyani.png"
+import chineseiImg from "../assets/food/Chinese.png"
+import northIndianImg from "../assets/food/NorthIndian.png"
+import pizzaImg from "../assets/food/Pizza.png"
+import burgerImg from "../assets/food/Burger.png"
+import dosaiImg from "../assets/food/Dosa.png"
+import pastryImg from "../assets/food/Pastry.png"
+import riceImg from "../assets/food/Rice.png"
+
 const itemsPerSlide = 4;
 const dishesList = [
-    {
+     {
         id: "1",
         category: "Rice",       
-        photo: "src/assets/food/Rice.png"
+        photo: riceImg
     },
     {
         id: "2",
         category: "Biriyani",
-        photo: "src/assets/food/Biriyani.png"
+        photo: biriyaniImg
     },
     {
         id: "3",
         category: "Chinese",
-        photo: "src/assets/food/Chinese.png"
+        photo: chineseiImg
     },
     {
         id: "4",
         category: "North Indian",
-        photo: "src/assets/food/NorthIndian.png"
-    },
+        photo: northIndianImg
+    }, 
     {
         id: "5",
         category: "Pizza",
-        photo: "src/assets/food/Pizza.png"
+        photo: pizzaImg
     },
     {
         id: "6",
         category: "Burger",
-        photo: "src/assets/food/Burger.png"
+        photo: burgerImg
     },
     {
         id: "7",
         category: "Dosa",
-        photo: "src/assets/food/Dosa.png"
+        photo: dosaiImg
     },
     {
         id: "8",
         category: "Pastry",
-        photo: "src/assets/food/Pastry.png"
+        photo: pastryImg
     }
 ]
 

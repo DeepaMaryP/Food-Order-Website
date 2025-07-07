@@ -23,11 +23,13 @@ function SellerHighlights({ sellers, dishCategory = '' }) {
         </div>
       }
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center m-6 p-2">
-        {sellerList.map((item) => (
-          <SellerCard key={item.seller.id} item={item} />
-        ))}
-      </div>
+      {sellerList.length > 0 &&
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center m-6 p-2">
+          {sellerList.map((item) => (
+            <SellerCard key={item.seller.id} item={item} />
+          ))}
+        </div>
+      }
     </div >
   )
 }

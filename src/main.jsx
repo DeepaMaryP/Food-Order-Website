@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
 
@@ -20,7 +20,7 @@ import TermsAndConditions from './pages/TermsAndConditions.jsx'
 import UserListPage from './pages/user/UserListPage.jsx'
 import LayoutPage from './pages/LayoutPage.jsx'
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <LayoutPage />,

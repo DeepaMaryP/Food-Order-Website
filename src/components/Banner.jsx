@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import bannerImg from "../assets/FoodBanner.jpg"
+
 function Banner() {
   return (
     <div className='grid grid-cols-2 my-10 bg-orange-50'>
@@ -11,7 +13,7 @@ function Banner() {
         </p>      
       </div>
 
-      <img src="/src/assets/FoodBanner.jpg" className='w-3/4 p-5 justify-center rounded-full' alt="" />
+      <img src={bannerImg} className='w-3/4 p-5 justify-center rounded-full' alt="" />
     </div>
   )
 }

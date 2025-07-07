@@ -6,7 +6,7 @@ import { deleteDish, getDishList } from '../../helpers/dishHelper'
 function ManageDishPage() {
 
     const [dishList, setDishList] = useState(getDishList());
-
+    
     const doDeleteDish = (id) => {
         if (window.confirm("Are you sure you want to delete this item?")) {
             const newDishList = deleteDish(id);

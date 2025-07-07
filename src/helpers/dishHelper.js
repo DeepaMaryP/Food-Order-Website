@@ -61,14 +61,12 @@ export function getDish() {
 }
 
 export function getDishList() {
-    let dishList = [];
-    const storedDishes = localStorage.getItem("dishList");
-    if (storedDishes) {
-        console.log(storedDishes);
-      
-       // dishList = JSON.parse(storedDishes)
+    try {
+         const storedDishes =  JSON.parse(localStorage.getItem("dishList") || "[]");
+         return JSON.parse(storedDishes);
+    } catch {
+        return [];
     }
-    return JSON.parse(dishList);
 }
 
 export function getDishById(id) {
@@ -86,26 +84,26 @@ export function getDishesBySeller(seller) {
 export function getOrderCount(seldishes) {
     const grouped = new Map();
     seldishes.forEach(item => {
-     const key = `${item.id}-${item.name}`; // unique key based on id + name
-      if (grouped.has(key)) { 
-        const existing = grouped.get(key);
-        existing.count += 1;
-        existing.totalPrice += item.price;
-      } else {       
-        grouped.set(key, { ...item, count: 1, totalPrice : item.price});
-      }
+        const key = `${item.id}-${item.name}`; // unique key based on id + name
+        if (grouped.has(key)) {
+            const existing = grouped.get(key);
+            existing.count += 1;
+            existing.totalPrice += item.price;
+        } else {
+            grouped.set(key, { ...item, count: 1, totalPrice: item.price });
+        }
     });
     const uniqueDishes = Array.from(grouped.values());
     return uniqueDishes
-  }
+}
 
 function addDish(dish) {
     const storedDishes = getDishList();
     const newDishes = [
         ...storedDishes,
         dish // and one new item at the end
-    ]    
-   
+    ]
+
     storeToLocal("dishList", JSON.stringify(newDishes))
 }
 
@@ -129,10 +127,15 @@ export function updateDish(dish) {
 }
 
 export function deleteDish(dishId) {
-    const storedDishes = getDishList();
-    const newDishes = storedDishes.filter(item => item.id !== dishId);
-    storeToLocal("dishList", JSON.stringify(newDishes))
-    return newDishes;
+    try {
+        const storedDishes = getDishList();
+        const newDishes = storedDishes.filter(item => item.id !== dishId);
+        storeToLocal("dishList", JSON.stringify(newDishes))
+        return newDishes;
+    } catch {
+        return []
+    }
+
 }
 
 export const storeDefaultDish = () => {

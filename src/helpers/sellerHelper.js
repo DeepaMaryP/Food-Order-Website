@@ -65,31 +65,43 @@ export function getSellerByName(sellerName) {
 }
 
 export function getActiveSellers(dishCategory) {
-    const dishesList = getDishList(); // get whole dish list    
-    const selDishes = dishesList.filter(dish => dish.category == dishCategory); // get matching dishes 
+    try {
+        const dishesList = getDishList(); // get whole dish list    
+        if (dishesList.length == 0) return {};
+        const selDishes = dishesList.filter(dish => dish.category == dishCategory); // get matching dishes 
 
-    if (selDishes.length == 0) { return } selDishes;
+        if (selDishes.length == 0) { return {} } selDishes;
 
-    const sellersOfDish = sellers.map(seller => {
-        let curDish = selDishes.find(dish => dish.seller == seller.name) //get first dish of the seller
-        if (curDish) {
-            return { seller, dish: curDish };
-        }
-        return null;
-    }).filter(Boolean)
+        const sellersOfDish = sellers.map(seller => {
+            let curDish = selDishes.find(dish => dish.seller == seller.name) //get first dish of the seller
+            if (curDish) {
+                return { seller, dish: curDish };
+            }
+            return null;
+        }).filter(Boolean)
 
-    return sellersOfDish;
+        return sellersOfDish;
+    } catch {
+        return {}
+    }
 }
 
 export function getActiveSellersAndDefaultDish() {
-    const dishesList = getDishList(); // get dish list
-    const dishSellerList = [...new Set(dishesList.map(dish => dish.seller))]; // get distinct sellers from dish list    
-    const sellerList = sellers.filter(seller => (dishSellerList.includes(seller.name))) // get seller objects of active sellers   
+    try {
+        const dishesList = getDishList(); // get dish list 
+        if (dishesList.length > 0) {
+            const dishSellerList = [...new Set(dishesList.map(dish => dish.seller))]; // get distinct sellers from dish list    
+            const sellerList = sellers.filter(seller => (dishSellerList.includes(seller.name))) // get seller objects of active sellers   
 
-    const sellersAndDefaultDish = sellerList.map(seller => {
-        let curDish = dishesList.find(dish => dish.seller == seller.name) //get first dish of the seller
-        return { seller, dish: curDish };
+            const sellersAndDefaultDish = sellerList.map(seller => {
+                let curDish = dishesList.find(dish => dish.seller == seller.name) //get first dish of the seller
+                return { seller, dish: curDish };
+            }
+            )
+            return sellersAndDefaultDish;
+        }
+        return {};
+    } catch {
+        return {};
     }
-    )
-    return sellersAndDefaultDish;
 }
