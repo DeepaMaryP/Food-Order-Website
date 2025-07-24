@@ -18,12 +18,12 @@ import AboutUs from './pages/AboutUs.jsx'
 import ContactUs from './pages/ContactUs.jsx'
 import TermsAndConditions from './pages/TermsAndConditions.jsx'
 import UserListPage from './pages/user/UserListPage.jsx'
-import LayoutPage from './pages/LayoutPage.jsx'
+import LayOutPage from './pages/LayoutPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LayoutPage />,
+    element: <LayOutPage />,
     errorElement: <ErrorPage />,
 
     children: [{

@@ -53,7 +53,7 @@ export function getDish() {
         seller: "",
         rating: "",
         photo: null,
-        price: "",
+        price: 0,
         discount: "",
         createdAt: ""
     }

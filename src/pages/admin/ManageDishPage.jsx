@@ -6,7 +6,7 @@ import { deleteDish, getDishList } from '../../helpers/dishHelper'
 function ManageDishPage() {
 
     const [dishList, setDishList] = useState(getDishList());
-    
+
     const doDeleteDish = (id) => {
         if (window.confirm("Are you sure you want to delete this item?")) {
             const newDishList = deleteDish(id);
@@ -34,7 +34,7 @@ function ManageDishPage() {
                 <table className="w-full my-10 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 text-justify uppercase bg-orange-300 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" className="pl-7 py-3">
+                            <th scope="col" className="text-center">
                                 Dish
                             </th>
                             <th scope="col" className="text-center">

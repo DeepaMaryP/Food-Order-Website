@@ -48,11 +48,11 @@ function ProductCard(props) {
             <div className='flex flex-col justify-center items-center'>
                 <img className="object-cover rounded-t-lg h-auto w-48 md:rounded-none md:rounded-s-lg" src={dish.photo} alt="" />
                 {!addToCart &&
-                    <div className='mt-3'>
-                        <a href="#" onClick={onClickAddToCart} className="justify-center text-white bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Add to cart</a>
+                    <div className='pt-2'>
+                        <button onClick={onClickAddToCart} className="justify-center text-white bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Add to cart</button>
                     </div>}
                 {addToCart &&
-                    <div class="flex items-center">
+                    <div class="flex items-center pt-2">
                         <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-l focus:outline-none focus:shadow-outline" onClick={decrement}>-</button>
                         <h4  className="text-center w-16 py-2 border-t border-b border-gray-200 focus:outline-none" > {count} </h4>
                         <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-r focus:outline-none focus:shadow-outline" onClick={increment}>+</button>

@@ -21,7 +21,7 @@ export default function OrderSummaryPage() {
     seller = sellers[0]
   }
 
-  const uniqueDishes = getOrderCount(dishes);
+  const uniqueDishes = getOrderCount(dishes);  
   const totalCartPrice = uniqueDishes.reduce((sum, item) => sum + item.totalPrice, 0);
   
   return (

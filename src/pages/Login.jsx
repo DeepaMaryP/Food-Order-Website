@@ -48,7 +48,7 @@ export default function Login() {
   }
 
   return (
-    <div className="flex w-1/3 mx-auto flex-1 flex-col justify-center mt-14 pb-5 border rounded-lg ">
+    <div className="flex w-3/4 lg:w-1/3 mx-auto flex-1 flex-col justify-center mt-14 pb-5 border rounded-lg ">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
           Sign in to your account

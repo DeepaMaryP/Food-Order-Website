@@ -17,7 +17,7 @@ function AddDishPage() {
   const [dish, setDish] = useState(getDish());
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
-
+ 
   let selectedCategory = dish?.category;
 
   const getSelectedCategory = (selectedItem) => {
@@ -78,9 +78,10 @@ function AddDishPage() {
     dish.seller = selectedItem;
   }
 
-  const saveDish = (event) => {
-    if (validateInputs()) {
-      addUpdateDish(dish, newId);
+  const saveDish = (event) => {  
+    event.preventDefault();  
+    if (validateInputs()) {   
+      addUpdateDish(dish, newId);      
       navigate("/admin/dishes")
     } else {
       event.preventDefault();
@@ -135,7 +136,7 @@ function AddDishPage() {
 
           <div className="flex my-5">
             <label htmlFor="price" className='pr-20 mr-1' >Price : </label>
-            <input type="number" id="price" name="price" required min="0" max="9999999999999999" value={dish?.price} onChange={((event) => handleChange(event.target.name, event.target.value))} className='border w-1/2' placeholder='Enter Price' />
+            <input type="number" id="price" name="price" required min="0" max="9999999999999999" value={dish?.price} onChange={((event) => handleChange(event.target.name, parseInt(event.target.value, 10)))} className='border w-1/2' placeholder='Enter Price' />
             {errorObject.price.length > 0 && <label htmlFor="price" className='text-red-500 pl-2'>{errorObject.price}</label>}
           </div>
 
